@@ -1,2 +1,25 @@
-let this be a function
-yes
+
+let players = Player list
+    for dinmor in players do
+       dinmor.draw
+       dinmor.draw
+
+let drawn cards =  int list
+    
+match list.sum dealer.cards with
+  |<17 -> færdig
+  |>12 & list.exists 1 dealer.cards -> end 
+  |>7  -> dealer.draw
+
+for fds in players do
+  system.console.write(det er player.name's turn)
+  players.cards
+  system.IO.Readline
+  rec player.draw + bustcheck /end
+dealer.play
+dealer.wincheck
+dealer.bust check
+   for ting in players do
+      match dealer.cards < players.cards
+        |true -> winner
+        |false -> taber
