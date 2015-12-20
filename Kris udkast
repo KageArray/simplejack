@@ -1,0 +1,23 @@
+open System
+type dealer(draw : int) = class
+  let mutable value = 0
+  let rnd1 = Random().Next(2,11) 
+  let rnd2 = Random().Next(2,11) 
+  member x.Draw = value <- rnd1
+  member x.NewDraw = value <- value + rnd2
+  member x.Print = printfn "Du er på: %A" value
+  member x.StayValue = value
+  member x.BustValue = value
+end
+
+let player1 = new dealer(0)
+let rec start draw =
+  Console.WriteLine("Hit or Stay")
+  player1.Print
+  match Console.ReadLine() with
+    |"hit"|"Hit" -> if player1.BustValue > 21 then printfn "Bust" else start player1.NewDraw
+    |"stay"|"Stay" -> start
+                      printfn "Du stoppede på: %A" player1.StayValue
+    | _ -> start 
+           printfn "Invalid command"
+start()
